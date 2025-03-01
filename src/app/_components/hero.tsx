@@ -23,7 +23,7 @@ export default function Hero() {
         <article className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="space-y-6">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-10">
-              Condições speciais no Ilha Pura{" "}
+              Condições especiais no Ilha Pura{" "}
             </h1>
             <p className="lg:text-lg">
               Venha morar no Bairro mais seguro, Barra Olimpíca
@@ -39,7 +39,7 @@ export default function Hero() {
             <div className="mt-8">
               <p className="text-sm mb-4">
                 <b className="bg-black text-white px-2 py-1 rounded-md">
-                  Viure com Condições imperdíveis
+                  Com Condições imperdíveis
                 </b>
               </p>
             </div>
