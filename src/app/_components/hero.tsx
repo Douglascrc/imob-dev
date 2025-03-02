@@ -29,6 +29,9 @@ export function Hero() {
               Venha morar no Bairro mais seguro, Barra Olimpíca
             </p>
             <a
+              data-aos="zoom-in"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="300"
               href={`https://wa.me/5521978809444?text=Olá vim pelo site e queria mais informações`}
               target="_blank"
               className="bg-green-500 px-5 py-2 rounded-md font-semibold flex items-center justify-center w-fit"
