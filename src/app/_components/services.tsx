@@ -51,7 +51,8 @@ export function Services() {
                     <div className="border-t border-gray-700 pt-4 flex items-center justify-center">
                       <a
                         className="flex items-center justify-center gap-2 hover:rounded-md p-2 duration-300 hover:bg-green-600"
-                        href=""
+                        href={`https://wa.me/5521978809444?text=Olá vim pelo site e queria mais informações`}
+                        target="_blank"
                       >
                         <WhatsappLogo className="w-5 h-5" />
                         Entrar em contato com um especialista
