@@ -4,7 +4,7 @@ import { WhatsappLogo } from "@phosphor-icons/react";
 import apartment from "@/../../public/galeria-millenium-01.jpg";
 import Image from "next/image";
 
-export default function Hero() {
+export function Hero() {
   return (
     <section className="bg-[#272b76cc] text-white relative overflow-hidden">
       <div className="lg:h-[500px]">
