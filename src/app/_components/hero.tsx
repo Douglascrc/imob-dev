@@ -1,5 +1,5 @@
 import { WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
-import apartment from "@/../../public/galeria-millenium-01.jpg";
+import apartment from "@/../../public/Perspectiva-Guarita-OceanSide_Recreio.webp";
 import Image from "next/image";
 
 export function Hero() {
@@ -21,10 +21,11 @@ export function Hero() {
         <article className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="space-y-6">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-10">
-              Condições especiais no Ilha Pura{" "}
+              Um estilo de vida único{" "}
             </h1>
             <p className="lg:text-lg">
-              Venha morar no Bairro mais seguro, Barra Olimpíca
+              Descubra o Oceanside: o mais novo lançamento no Recreio dos
+              Bandeirantes que eleva sua qualidade de vida a um novo patamar
             </p>
             <a
               data-aos="zoom-in"
