@@ -15,7 +15,10 @@ export function Footer() {
               <p className="mb-4">
                 Adquira seu imóvel na área mais atrativa do Rio de Janeiro
               </p>
-              <a href="" className="bg-green-500 px-4 py-2 rounded-md">
+              <a
+                href={`https://wa.me/${process.env.PHONE}?text=Olá vim pelo site e queria mais informações`}
+                className="bg-green-500 px-4 py-2 rounded-md"
+              >
                 {" "}
                 Contato via Whatsapp
               </a>

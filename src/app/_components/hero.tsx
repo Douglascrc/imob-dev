@@ -1,6 +1,4 @@
-"use client";
-
-import { WhatsappLogo } from "@phosphor-icons/react";
+import { WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
 import apartment from "@/../../public/galeria-millenium-01.jpg";
 import Image from "next/image";
 
@@ -32,7 +30,7 @@ export function Hero() {
               data-aos="zoom-in"
               data-aos-easing="ease-out-cubic"
               data-aos-duration="300"
-              href={`https://wa.me/5521978809444?text=Olá vim pelo site e queria mais informações`}
+              href={`https://wa.me/${process.env.PHONE}?text=Olá vim pelo site e queria mais informações`}
               target="_blank"
               className="bg-green-500 px-5 py-2 rounded-md font-semibold flex items-center justify-center w-fit"
             >
