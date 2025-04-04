@@ -5,10 +5,10 @@ import Image from "next/image";
 export function Hero() {
   return (
     <section className="bg-[#272b76cc] text-white relative overflow-hidden">
-      <div className="lg:h-[500px]">
+      <div className="h-[400px] md:h-[380px] lg:h-[400px]">
         <Image
           src={apartment}
-          alt="Foto da fachada do Viure"
+          alt="Foto da fachada do OceanSide"
           className="object-cover opacity-60"
           fill
           sizes="100vw"
@@ -17,8 +17,8 @@ export function Hero() {
         <div className="absolute inset-0 bg-black opacity-40"></div>
       </div>
 
-      <div className="container mx-auto pt-16 pb-16 md:pb-0 px-4 relative">
-        <article className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="container mx-auto pt-4 lg:pt-8 pb-8 md:pb-24 px-4 relative">
+        <article className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:mt-0">
           <div className="space-y-6">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-10">
               Um estilo de vida único{" "}
@@ -36,18 +36,18 @@ export function Hero() {
               className="bg-green-500 px-5 py-2 rounded-md font-semibold flex items-center justify-center w-fit"
             >
               <WhatsappLogo className="w-5 h-5" />
-              Contato via WhatsApp
+              Agende sua visita
             </a>
 
             <div className="mt-8">
               <p className="text-sm mb-4">
-                <b className="bg-black text-white px-2 py-1 rounded-md">
-                  Com Condições imperdíveis
+                <b className="bg-red-500 text-white px-2 py-1 rounded-md">
+                  Condições exclusivas de lançamento
                 </b>
               </p>
             </div>
 
-            <div className="hidden md:block h-full relative">
+            <div className="hidden h-full relative">
               <Image
                 src={apartment}
                 alt="Foto da fachada do Viure"
