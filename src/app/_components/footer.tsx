@@ -10,6 +10,7 @@ export function Footer() {
               <h3 className="text-2xl font-semibold mb-2">
                 Corretora: Lucinda Racca
               </h3>
+              <p className="text-center mb-4">CRECI: 78906</p>
               <p className="mb-4">
                 Adquira seu imóvel na área mais atrativa do Rio de Janeiro
               </p>
