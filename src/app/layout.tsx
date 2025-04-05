@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AosInit } from "./_components/aos-init";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -51,9 +52,18 @@ export default function RootLayout({
           name="description"
           content="Encontre o imóvel perfeito com o Oceanside: lançamento exclusivo no Recreio dos Bandeirantes, segurança e condições especiais."
         />
-
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-341641045"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-341641045');
+          `}
+        </Script>
 
         <meta name="author" content="Douglas Campos" />
         <meta name="robots" content="index, follow" />
@@ -65,11 +75,6 @@ export default function RootLayout({
         <meta
           name="Um imóvel de lançamento no Recreio dos bandeirantes"
           content="Imóvel Ocean Side na Cidade do Rio de Janeiro"
-        />
-
-        <meta
-          name="description"
-          content="Descubra o Oceanside: lançamento exclusivo no Recreio dos Bandeirantes, segurança, qualidade de vida e condições especiais."
         />
 
         <script type="application/ld+json">
