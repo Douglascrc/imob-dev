@@ -81,14 +81,16 @@ export function ImagesCarousel() {
               className="flex-[0_0_100%] relative"
               style={{ minWidth: "80%" }}
             >
-              <div className="h-[600px] lg:h-[950px] relative">
-                <Image
-                  src={src}
-                  alt={`Imagem ${index + 1}`}
-                  fill
-                  style={{ objectFit: "cover" }}
-                  className="rounded-md"
-                />
+              <div className="h-[600px] md:h-[500px] lg:h-[950px] relative">
+                <a href={src} target="_blank" rel="noopener noreferrer">
+                  <Image
+                    src={src}
+                    alt={`Imagem ${index + 1}`}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    className="rounded-md"
+                  />
+                </a>
               </div>
             </div>
           ))}
