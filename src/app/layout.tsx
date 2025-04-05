@@ -16,6 +16,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.raccaimoveis.com.br"),
   title: "OceanSide",
+  icons: {
+    icon: "/logo_site.png",
+    shortcut: "/logo_site.png",
+    apple: "/logo_site.png",
+  },
   openGraph: {
     title: "OceanSide",
     description:
