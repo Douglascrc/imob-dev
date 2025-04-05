@@ -16,24 +16,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.raccaimoveis.com.br"),
   title: "OceanSide",
-  icons: {
-    icon: "/logo_site.png",
-    shortcut: "/logo_site.png",
-    apple: "/logo_site.png",
-  },
   openGraph: {
     title: "OceanSide",
     description:
       "Encontre o imóvel perfeito com o Oceanside: lançamento exclusivo no Recreio dos Bandeirantes, segurança e condições especiais.",
     url: "https://www.raccaimoveis.com.br",
     siteName: "OceanSide",
-    images: [
-      {
-        url: "/logo_site.png",
-        width: 800,
-        height: 600,
-      },
-    ],
+
     locale: "pt-BR",
     type: "website",
   },
@@ -52,6 +41,7 @@ export default function RootLayout({
       <head>
         <link rel="apple-touch-icon" sizes="180x180" href="/logo_site.png" />
         <link rel="icon" sizes="192x192" href="/logo_site.png" />
+
         <meta
           name="description"
           content="Encontre o imóvel perfeito com o Oceanside: lançamento exclusivo no Recreio dos Bandeirantes, segurança e condições especiais."
