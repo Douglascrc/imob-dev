@@ -6,7 +6,7 @@ import { WhatsappLogo } from "@phosphor-icons/react";
 
 export function Services() {
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: false,
+    loop: true,
     align: "start",
     slidesToScroll: 1,
     breakpoints: {
