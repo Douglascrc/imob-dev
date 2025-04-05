@@ -4,77 +4,21 @@ import {
   Barbell,
   Car,
   MapPin,
-  PlayCircle,
   Shower,
   WhatsappLogo,
 } from "@phosphor-icons/react";
-import { useEffect, useState } from "react";
 import { MdAirlineSeatIndividualSuite } from "react-icons/md";
-import pool from "@/../public/Perspectiva-Piscina-OceanSide_Recreio.webp";
-import Image from "next/image";
-import dynamic from "next/dynamic";
 
-const ReactPlayer = dynamic(() => import("react-player/lazy"), {
-  ssr: false,
-  loading: () => (
-    <div className="h-[360px] bg-gray-100 animate-pulse rounded-3xl" />
-  ),
-});
+import { YouTubePlayer } from "./youtube-player";
 
 export function About() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
   return (
     <section className="bg-[#FDF6ec] py-16">
       <div className="container px-4 mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
             <div className="relative w-full h-[400px] overflow-hidden rounded-3xl">
-              {isClient && (
-                <ReactPlayer
-                  url="https://www.youtube.com/watch?v=OnvMQ5w6XSs"
-                  light={
-                    <Image
-                      src={pool}
-                      alt="Thumbnail do vídeo"
-                      className="object-cover"
-                      fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                      placeholder="blur"
-                      priority
-                      fetchPriority="high"
-                    />
-                  }
-                  width="100%"
-                  height="100%"
-                  playIcon={
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <button className="bg-black/50 rounded-full p-2 hover:bg-black/70 transition-all">
-                        <PlayCircle size={64} className="text-white" />
-                      </button>
-                    </div>
-                  }
-                  controls={true}
-                  playing={isPlaying}
-                  onClickPreview={() => setIsPlaying(true)}
-                  config={{
-                    youtube: {
-                      playerVars: {
-                        modestbranding: 1,
-                        rel: 0,
-                        preload: "auto",
-                      },
-                    },
-                  }}
-                  onError={() => setIsPlaying(false)}
-                  className="react-player"
-                />
-              )}
+              <YouTubePlayer />
             </div>
           </div>
 
