@@ -51,7 +51,7 @@ export default function RootLayout({
     <html lang="pt-br">
       <head>
         <link rel="apple-touch-icon" sizes="180x180" href="/logo_site.png" />
-
+        <link rel="icon" sizes="192x192" href="/logo_site.png" />
         <meta
           name="description"
           content="Encontre o imóvel perfeito com o Oceanside: lançamento exclusivo no Recreio dos Bandeirantes, segurança e condições especiais."
