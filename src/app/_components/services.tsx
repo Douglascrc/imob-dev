@@ -25,7 +25,7 @@ export function Services() {
   return (
     <section className="bg-white py-16">
       <div className="container mx-auto px-4">
-        <h2 className="font-bold text-4xl mb-12 text-black">Imovéis</h2>
+        <h2 className="font-bold text-4xl mb-12 text-black">Consultoria</h2>
 
         <div className="relative">
           <div className="overflow-hidden" ref={emblaRef}>
@@ -38,11 +38,11 @@ export function Services() {
                   <article className="bg-[#1e293b] text-white rounded-2xl p-6 space-y-4 h-full flex flex-col">
                     <div className="flex-1 flex items-start justify-between">
                       <div>
-                        <span className="text-3xl">{item.icon}</span>
-                        <h3 className=" my-1 font-bold text-xl">
-                          {item.title}
-                        </h3>
-                        <p className="text-gray-400 text-sm select-none">
+                        <div className="flex gap-2 my-1">
+                          <span className="text-3xl">{item.icon}</span>
+                          <h3 className=" font-bold text-xl">{item.title}</h3>
+                        </div>
+                        <p className="text-gray-400 font-bold text-sm select-none">
                           {item.description}
                         </p>
                       </div>
@@ -51,7 +51,7 @@ export function Services() {
                     <div className="border-t border-gray-700 pt-4 flex items-center justify-center">
                       <a
                         className="flex items-center justify-center gap-2 hover:rounded-md p-2 duration-300 hover:bg-green-600"
-                        href={`https://wa.me/${process.env.NEXT_PUBLIC_PHONE}?text=Olá vim pelo site e queria mais informações`}
+                        href={`https://wa.me/${process.env.NEXT_PUBLIC_PHONE}?text=${item.linkText}`}
                         target="_blank"
                       >
                         <WhatsappLogo className="w-5 h-5" />
@@ -87,32 +87,27 @@ export function Services() {
 
 const services = [
   {
-    title: "Consulta",
+    title: "Outros imóveis",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget nibh suscipit risus vestibulum rhoncus. Maecenas gravida mi ac sapien gravida, eu maximus arcu gravida. Vestibulum vel dolor sit amet neque fermentum vestibulum eget eget elit. Nulla facilisis ex id libero ultrices, sed euismod purus placerat. Praesent sed ipsum ac lorem placerat semper pretium in tortor. Aliquam commodo semper mauris, nec aliquet dolor sollicitudin feugiat. Donec ut ligula nibh. Suspendisse volutpat est justo, at tempus nibh lacinia vitae. Ut pulvinar ut mi nec faucibus.",
-    duration: "1h",
-    price: "$45",
+      "Posso te orientar sobre imovéis de outras regiões que possa te interessar. Entre em contato para que eu possa te ajudar a encontrar o imóvel ideal para você.",
     icon: <House />,
     linkText:
-      "Olá, vi no site sobre Consultoria e gostaria de mais informações.",
+      "Olá, vim do site e gostaria de mais informações sobre outros imóveis.",
   },
   {
     title: "Visita",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed semper, lectus eget semper imperdiet, nunc magna dapibus metus, eu porta ante libero et mauris. Donec sed rhoncus justo, vitae viverra risus. Aliquam non purus tortor. In sit amet ultrices tellus, in porta mauris. Praesent consectetur orci sem, vitae pharetra urna pharetra porta. Donec eu elit nec turpis ornare tincidunt in sit amet ante. Ut non dictum nibh. Duis sit amet magna nec dolor pharetra egestas. Maecenas eget ipsum mi.",
-    duration: "2h",
-    price: "$80",
+      "Podemos agendar uma visita ao imóvel para que você possa conhecê-lo pessoalmente e conversamos sobre o que você busca. Entre em contato para agendarmos um horário.",
+
     icon: <House />,
-    linkText: "Olá, vi no site e gostaria de mais informações.",
+    linkText: "Olá, gostaria de agendar uma visita no Oceanside.",
   },
   {
-    title: "Oferta",
+    title: "Simulação de financiamento",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget nibh suscipit risus vestibulum rhoncus. Maecenas gravida mi ac sapien gravida, eu maximus arcu gravida. Vestibulum vel dolor sit amet neque fermentum vestibulum eget eget elit. Nulla facilisis ex id libero ultrices, sed euismod purus placerat. Praesent sed ipsum ac lorem placerat semper pretium in tortor. Aliquam commodo semper mauris, nec aliquet dolor sollicitudin feugiat. Donec ut ligula nibh. Suspendisse volutpat est justo, at tempus nibh lacinia vitae. Ut pulvinar ut mi nec faucibus.",
-    duration: "1h",
-    price: "$45",
+      "Podemos simular o financiamento do imóvel para que você tenha uma ideia de como ficaria o valor das parcelas e as condições de pagamento. Entre em contato para que eu possa te ajudar com isso.",
+
     icon: <House />,
-    linkText:
-      "Olá, vi no site sobre Consultoria e gostaria de mais informações.",
+    linkText: "Olá, gostaria de simular um financiamento para o imóvel.",
   },
 ];
