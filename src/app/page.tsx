@@ -3,6 +3,7 @@ import { Footer } from "./_components/footer";
 import { Hero } from "./_components/hero";
 import { ImagesCarousel } from "./_components/images-carousel";
 import { Services } from "./_components/services";
+import { WhatsappSticker } from "./_components/whatsapp-sticker";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <About />
       <ImagesCarousel />
       <Services />
+      <WhatsappSticker />
       <Footer />
     </main>
   );
