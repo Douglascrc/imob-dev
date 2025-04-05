@@ -34,7 +34,7 @@ export function About() {
       <div className="container px-4 mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative">
-            <div className="relative w-full h-[360px] overflow-hidden rounded-3xl">
+            <div className="relative w-full h-[400px] overflow-hidden rounded-3xl">
               {isClient && (
                 <ReactPlayer
                   url="https://www.youtube.com/watch?v=OnvMQ5w6XSs"
@@ -78,10 +78,10 @@ export function About() {
             </div>
           </div>
 
-          <div className="space-y-6 ">
+          <div className="space-y-6 pl-4">
             <h2 className="text-4xl font-bold text-black">Saiba Mais</h2>
 
-            <p className="text-black">
+            <p className="text-black text-lg font-bold word-wrap">
               Viva no Recreio um bairro planejado com segurança para sua
               família, um estilo de vida único perto das melhores praias, da
               natureza e de tudo o que importa!
@@ -93,11 +93,15 @@ export function About() {
                   className="w-8 h-8 text-red-500"
                   aria-hidden="true"
                 />
-                <span>Suítes individuais com acabamento premium.</span>
+                <span className="text-lg">
+                  Suítes individuais com acabamento premium.
+                </span>
               </li>
               <li className="flex items-center gap-3">
                 <Barbell className="w-8 h-8 text-red-500" aria-hidden="true" />
-                <span>Academia completa com equipamentos modernos.</span>
+                <span className="text-lg">
+                  Academia completa com equipamentos modernos.
+                </span>
               </li>
               <li className="flex items-center gap-3">
                 <Shower
