@@ -20,6 +20,9 @@ export function Footer() {
               <h3 className="text-2xl font-semibold mb-2">Contatos</h3>
               <p className="mb-4">Email: lucindaracca48@gmail.com</p>
               <p>Telefone: (21) 96405-9493 </p>
+              <p className="text-xs text-gray-500 text-center mt-4">
+                Atendimento via: WhatsApp.
+              </p>
             </div>
 
             <div>

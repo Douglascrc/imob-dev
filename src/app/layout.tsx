@@ -33,8 +33,25 @@ export const metadata: Metadata = {
     type: "website",
   },
   description: "Lançamento Oceanside no Recreio dos Bandeirantes",
-  keywords:
-    "Oceanside, lançamento, Recreio dos Bandeirantes, imóveis, investimento em imóveis",
+  keywords: [
+    "Oceanside",
+    "lançamento Recreio",
+    "WhatsApp corretor",
+    "Zap imóveis Recreio",
+    "Chamar no WhatsApp",
+    "Agendar visita",
+    "imóveis Recreio",
+    "imóveis Rio de Janeiro",
+    "imóveis à venda",
+    "Fale com o corretor",
+    "Conversar com corretor",
+    "Conversar pelo WhatsApp",
+    "contato corretor Recreio",
+    "telefone imobiliária Oceanside",
+
+    "Recreio dos Bandeirantes",
+    "investimento imóveis",
+  ].join(", "),
 };
 
 export default function RootLayout({
@@ -81,13 +98,17 @@ export default function RootLayout({
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "RealEstateAgent",
-            name: "Racca Imovéis",
-            image: "/logo_site.png",
-            telephone: "+55 (21) XXXX-XXXX",
-            email: "lucindaracca48@gmail.com.br",
+            contactPoint: {
+              "@type": "ContactPoint",
+              contactType: "sales",
+              telephone: "+55 21 96405-9493",
+              whatsapp: "+55 21 96405-9493",
+              areaServed: "Rio de Janeiro",
+              email: "lucindaracca48@gmail.com.br",
+            },
             address: {
               "@type": "PostalAddress",
-              streetAddress: "Av. das Américas, 12345",
+              streetAddress: "Av. das Américas",
               addressLocality: "Rio de Janeiro",
               addressRegion: "RJ",
               postalCode: "22790-701",
