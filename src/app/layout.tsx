@@ -62,6 +62,19 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <head>
+        <link
+          rel="preconnect"
+          href="https://www.youtube.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://s.ytimg.com"
+          crossOrigin="anonymous"
+        />
+        <link rel="dns-prefetch" href="https://www.youtube.com" />
+        <link rel="dns-prefetch" href="https://s.ytimg.com" />
+
         <link rel="apple-touch-icon" sizes="180x180" href="/logo_site.png" />
         <link rel="icon" sizes="192x192" href="/logo_site.png" />
 
