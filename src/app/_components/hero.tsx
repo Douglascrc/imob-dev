@@ -21,11 +21,11 @@ export function Hero() {
         <article className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:mt-0">
           <div className="space-y-6">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-10">
-              Um estilo de vida único{" "}
+              Um condomínio no Pontal Oceânico{" "}
             </h1>
             <p className="lg:text-lg">
-              Descubra o Oceanside: o mais novo lançamento no Recreio dos
-              Bandeirantes que eleva sua qualidade de vida a um novo patamar
+              Descubra o Oceanside: O mais novo lançamento no Pontal Oceânico
+              que eleva sua qualidade de vida a um novo patamar
             </p>
             <a
               data-aos="zoom-in"
