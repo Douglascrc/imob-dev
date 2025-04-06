@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import ReactDOM from "react-dom";
+import { useSwipeable } from "react-swipeable";
 
 const decoradoImages = [
   "https://www.rivaincorporadora.com.br/wp-content/uploads/2024/08/Decorado-Sala01-OceanSide_Recreio.jpg",
@@ -92,6 +93,12 @@ export function ImagesCarousel() {
   const nextModal = () => {
     setModalIndex((prev) => (prev + 1) % images.length);
   };
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => nextModal(),
+    onSwipedRight: () => prevModal(),
+    preventScrollOnSwipe: true,
+    trackTouch: true,
+  });
 
   const getSlideWidth = () => {
     if (typeof window === "undefined") return "100%";
@@ -112,10 +119,11 @@ export function ImagesCarousel() {
       <div
         className="relative max-w-4xl w-full"
         onClick={(e) => e.stopPropagation()}
+        {...swipeHandlers}
       >
         <button
           onClick={closeModal}
-          className="absolute z-50 top-24 sm:top-12 md:top-0 right-0 cursor-pointer text-white text-3xl font-bold"
+          className="absolute z-50 top-24 sm:top-12 md:-top-3 right-0 cursor-pointer text-white text-3xl font-bold"
           aria-label="Fechar"
         >
           <X className="hover:bg-red-500 rounded-md" size={40} />
