@@ -105,7 +105,10 @@ export function ImagesCarousel() {
   if (!isMounted) return null;
 
   const modalContent = (
-    <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 px-8">
+    <div
+      className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 px-8"
+      style={{ touchAction: "pan-x" }}
+    >
       <div
         className="relative max-w-4xl w-full"
         onClick={(e) => e.stopPropagation()}
@@ -115,7 +118,7 @@ export function ImagesCarousel() {
           className="absolute z-50 top-24 sm:top-12 md:top-0 right-0 cursor-pointer text-white text-3xl font-bold"
           aria-label="Fechar"
         >
-          <X className="hover:bg-red-500 rounded-md" size={36} />
+          <X className="hover:bg-red-500 rounded-md" size={40} />
         </button>
         <button
           onClick={prevModal}
