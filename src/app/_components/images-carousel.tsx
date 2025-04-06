@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useCallback, useState } from "react";
-import useEmblaCarousel from "embla-carousel-react";
+import React, { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
+import ReactDOM from "react-dom";
 
 const decoradoImages = [
   "https://www.rivaincorporadora.com.br/wp-content/uploads/2024/08/Decorado-Sala01-OceanSide_Recreio.jpg",
@@ -36,15 +37,36 @@ const imagensImages = [
 ];
 
 export function ImagesCarousel() {
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const [selectedCategory, setSelectedCategory] = useState<
     "decorado" | "imagens"
   >("decorado");
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalIndex, setModalIndex] = useState(0);
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "start",
     slidesToScroll: 1,
   });
 
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isModalOpen]);
+
+  const images =
+    selectedCategory === "decorado" ? decoradoImages : imagensImages;
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
   }, [emblaApi]);
@@ -53,8 +75,76 @@ export function ImagesCarousel() {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
-  const images =
-    selectedCategory === "decorado" ? decoradoImages : imagensImages;
+  const openModal = (index: number) => {
+    setModalIndex(index);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsModalOpen(false);
+  };
+
+  const prevModal = () => {
+    setModalIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const nextModal = () => {
+    setModalIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const getSlideWidth = () => {
+    if (typeof window === "undefined") return "100%";
+    return window.innerWidth < 768 ? "100%" : "80%";
+  };
+
+  if (!isMounted) return null;
+
+  const modalContent = (
+    <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 px-8">
+      <div
+        className="relative max-w-4xl w-full"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          onClick={closeModal}
+          className="absolute z-50 top-24 sm:top-12 md:top-0 right-0 cursor-pointer text-white text-3xl font-bold"
+          aria-label="Fechar"
+        >
+          <X className="hover:bg-red-500 rounded-md" size={36} />
+        </button>
+        <button
+          onClick={prevModal}
+          className="absolute z-50 -left-2 top-1/2 flex items-center transform -translate-y-1/2 text-black bg-white rounded-full text-3xl"
+          aria-label="Anterior"
+        >
+          <ChevronLeft size={32} />
+        </button>
+        <button
+          onClick={nextModal}
+          className="absolute z-50 -right-2 top-1/2 flex items-center transform -translate-y-1/2 text-black bg-white rounded-full text-3xl"
+          aria-label="Próxima"
+        >
+          <ChevronRight size={32} />
+        </button>
+        <div className="w-full h-[80vh] relative">
+          <a
+            href={images[modalIndex]}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={images[modalIndex]}
+              alt={`Imagem ${modalIndex + 1}`}
+              fill
+              style={{ objectFit: "contain" }}
+              className="rounded-md"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <section className="relative bg-white px-4 py-16">
@@ -79,18 +169,19 @@ export function ImagesCarousel() {
             <div
               key={index}
               className="flex-[0_0_100%] relative"
-              style={{ minWidth: "80%" }}
+              style={{ minWidth: getSlideWidth() }}
             >
-              <div className="h-[600px] md:h-[500px] lg:h-[950px] relative">
-                <a href={src} target="_blank" rel="noopener noreferrer">
-                  <Image
-                    src={src}
-                    alt={`Imagem ${index + 1}`}
-                    fill
-                    style={{ objectFit: "cover" }}
-                    className="rounded-md"
-                  />
-                </a>
+              <div
+                className="h-[600px] md:h-[300px] lg:h-[950px] relative"
+                onClick={() => openModal(index)}
+              >
+                <Image
+                  src={src}
+                  alt={`Imagem ${index + 1}`}
+                  fill
+                  style={{ objectFit: "cover" }}
+                  className="rounded-md"
+                />
               </div>
             </div>
           ))}
@@ -108,6 +199,8 @@ export function ImagesCarousel() {
       >
         <ChevronRight size={24} className="text-gray-600" />
       </button>
+
+      {isModalOpen && ReactDOM.createPortal(modalContent, document.body)}
     </section>
   );
 }
