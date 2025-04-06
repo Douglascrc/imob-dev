@@ -23,16 +23,16 @@ export const metadata: Metadata = {
     apple: "/logo_site.png",
   },
   openGraph: {
-    title: "OceanSide",
+    title: "OceanSide - Fale Direto pelo WhatsApp",
     description:
-      "Encontre o imóvel perfeito com o Oceanside: lançamento exclusivo no Recreio dos Bandeirantes, segurança e condições especiais.",
+      "Apartamentos frente mar no Recreio. Fale agora com nosso corretor: (21) 96405-9493", // WhatsApp no OG
     url: "https://www.raccaimoveis.com.br",
     siteName: "OceanSide",
-
     locale: "pt-BR",
     type: "website",
   },
-  description: "Lançamento Oceanside no Recreio dos Bandeirantes",
+  description:
+    "Lançamento Oceanside no Recreio - Fale direto pelo WhatsApp: (21) 96405-9493",
   keywords: [
     "Oceanside",
     "lançamento Recreio",
