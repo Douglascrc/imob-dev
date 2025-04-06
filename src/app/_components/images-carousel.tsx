@@ -98,6 +98,10 @@ export function ImagesCarousel() {
     return window.innerWidth < 768 ? "100%" : "80%";
   };
 
+  const isTouchDevice =
+    typeof window !== "undefined" &&
+    ("ontouchstart" in window || navigator.maxTouchPoints > 0);
+
   if (!isMounted) return null;
 
   const modalContent = (
@@ -132,6 +136,11 @@ export function ImagesCarousel() {
             href={images[modalIndex]}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => {
+              if (isTouchDevice) {
+                e.preventDefault();
+              }
+            }}
           >
             <Image
               src={images[modalIndex]}
