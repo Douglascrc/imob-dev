@@ -16,18 +16,18 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.raccaimoveis.com.br"),
-  title: "OceanSide",
+  title: "Oceanside",
   icons: {
     icon: "/logo_site.png",
     shortcut: "/logo_site.png",
     apple: "/logo_site.png",
   },
   openGraph: {
-    title: "OceanSide - Fale Direto pelo WhatsApp",
+    title: "Oceanside - Fale Direto pelo WhatsApp",
     description:
       "Apartamentos frente mar no Recreio. Fale agora com nosso corretor: (21) 96405-9493", // WhatsApp no OG
     url: "https://www.raccaimoveis.com.br",
-    siteName: "OceanSide",
+    siteName: "Oceanside",
     locale: "pt-BR",
     type: "website",
   },
