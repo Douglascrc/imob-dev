@@ -38,7 +38,7 @@ export function WhatsappSticker() {
         </div>
       )}
       <a
-        href={`https://wa.me/${process.env.NEXT_PUBLIC_PHONE}?text=Olá vim do site e gostaria de mais informações`}
+        href={`https://wa.me/${process.env.PHONE}?text=Olá vim pelo site e queria mais informações`}
         target="_blank"
         data-aos="fade-down"
         data-aos-easing="ease-out-cubic"
