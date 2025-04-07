@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "tsc next-sitemap.config.ts --esModuleInterop --module commonjs && next-sitemap --config next-sitemap.config.js",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint --dir",
     "prettier:check": "prettier --check .",
