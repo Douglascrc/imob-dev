@@ -1,8 +1,11 @@
 import { WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
 import apartment from "@/../../public/Perspectiva-Guarita-OceanSide_Recreio.webp";
 import Image from "next/image";
+import { useTracking } from "./useTracking";
 
 export function Hero() {
+  const { trackConversion } = useTracking();
+
   return (
     <section className="bg-[#272b76cc] text-white relative overflow-hidden">
       <div className="h-[400px] md:h-[380px] lg:h-[400px]">
@@ -12,7 +15,7 @@ export function Hero() {
           className="object-cover opacity-60"
           fill
           sizes="100vw"
-          priority
+          priority={true}
         />
         <div className="absolute inset-0 bg-black opacity-40"></div>
       </div>
@@ -32,8 +35,10 @@ export function Hero() {
               data-aos-easing="ease-out-cubic"
               data-aos-duration="300"
               href={`https://wa.me/${process.env.PHONE}?text=Olá vim pelo site e queria mais informações`}
+              rel="noopener noreferrer"
               target="_blank"
               className="bg-green-500 px-5 py-2 rounded-md font-semibold flex items-center justify-center w-fit"
+              onClick={() => trackConversion("visita_agendada")}
             >
               <WhatsappLogo className="w-5 h-5" />
               Agende sua visita

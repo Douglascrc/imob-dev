@@ -8,10 +8,12 @@ import {
   WhatsappLogo,
 } from "@phosphor-icons/react";
 import { MdAirlineSeatIndividualSuite } from "react-icons/md";
-
 import { YouTubePlayer } from "./youtube-player";
+import { useTracking } from "./useTracking";
 
 export function About() {
+  const { trackConversion } = useTracking();
+
   return (
     <section className="bg-[#FDF6ec] py-16">
       <div className="container px-4 mx-auto">
@@ -38,7 +40,7 @@ export function About() {
                   aria-hidden="true"
                 />
                 <span className="text-lg">
-                  Suítes individuais com acabamento premium.
+                  2 e 3 quartos com Suítes e acabamento premium.
                 </span>
               </li>
               <li className="flex items-center gap-3">
@@ -66,9 +68,11 @@ export function About() {
 
             <div className="flex gap-2">
               <a
+                id="whatsapp-button"
                 href={`https://wa.me/${process.env.PHONE}?text=Olá vim pelo site e queria mais informações`}
                 target="_blank"
                 className="bg-[#E84C3D] items-center flex justify-center w-fit gap-2 px-4 py-2 rounded-md"
+                onClick={() => trackConversion("falar_com_especialista")}
               >
                 <WhatsappLogo className="text-white w-5 h-5" />
                 Fale com um especialista

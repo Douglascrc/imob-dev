@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Oceanside - Fale Direto pelo WhatsApp",
     description:
-      "Apartamentos frente mar no Recreio. Fale agora com nosso corretor: (21) 96405-9493", // WhatsApp no OG
+      "Apartamentos frente mar no Recreio. Fale agora com nosso corretor: (21) 96405-9493",
     url: "https://www.raccaimoveis.com.br",
     siteName: "Oceanside",
     locale: "pt-BR",

@@ -2,8 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import { WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
+import { useTracking } from "./useTracking";
 
 export function WhatsappSticker() {
+  const { trackConversion } = useTracking();
   const messages = [
     "Vamos conversar sobre...",
     "Qualquer dúvida estou aqui?",
@@ -38,6 +40,7 @@ export function WhatsappSticker() {
         </div>
       )}
       <a
+        id="whatsapp-button"
         href={`https://wa.me/${process.env.PHONE}?text=Olá vim pelo site e queria mais informações`}
         target="_blank"
         data-aos="fade-down"
@@ -46,6 +49,7 @@ export function WhatsappSticker() {
         rel="noopener noreferrer"
         className="bg-green-500 text-white rounded-full p-4 shadow-lg hover:bg-green-600 transition-colors"
         aria-label="Chat on WhatsApp"
+        onClick={() => trackConversion("whatsapp_sticker_click")}
       >
         <WhatsappLogo size={32} weight="fill" />
       </a>

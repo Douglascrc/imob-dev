@@ -3,8 +3,10 @@
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight, House } from "lucide-react";
 import { WhatsappLogo } from "@phosphor-icons/react";
+import { useTracking } from "./useTracking";
 
 export function Services() {
+  const { trackConversion } = useTracking();
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "start",
@@ -53,6 +55,7 @@ export function Services() {
                         className="flex items-center justify-center gap-2 hover:rounded-md p-2 duration-300 hover:bg-green-600"
                         href={`https://wa.me/${process.env.PHONE}?text=${item.linkText}`}
                         target="_blank"
+                        onClick={() => trackConversion("servicos_contato")}
                       >
                         <WhatsappLogo className="w-5 h-5" />
                         Entrar em contato com um especialista
