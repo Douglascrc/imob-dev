@@ -72,7 +72,9 @@ export function About() {
                 href={`https://wa.me/${process.env.PHONE}?text=Olá vim pelo site e queria mais informações`}
                 target="_blank"
                 className="bg-[#E84C3D] items-center flex justify-center w-fit gap-2 px-4 py-2 rounded-md"
-                onClick={() => trackConversion("falar_com_especialista")}
+                onClick={() =>
+                  trackConversion("whatsapp_falar_com_especialista")
+                }
               >
                 <WhatsappLogo className="text-white w-5 h-5" />
                 Fale com um especialista

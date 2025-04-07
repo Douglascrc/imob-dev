@@ -10,6 +10,11 @@ export const useTracking = () => {
       event_category: "engagement",
       event_label: label,
     });
+
+    window.gtag("event", "whatsapp_sticker_click", {
+      event_category: "engagement",
+      event_label: label,
+    });
   };
 
   return { trackConversion };
