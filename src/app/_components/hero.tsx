@@ -1,4 +1,6 @@
-import { WhatsappLogo } from "@phosphor-icons/react/dist/ssr";
+"use client";
+
+import { WhatsappLogo } from "@phosphor-icons/react";
 import apartment from "@/../../public/Perspectiva-Guarita-OceanSide_Recreio.webp";
 import Image from "next/image";
 import { useTracking } from "./useTracking";
