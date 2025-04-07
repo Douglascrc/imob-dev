@@ -67,6 +67,11 @@ export default function RootLayout({
         </Script>
 
         <link
+          rel="canonical"
+          href="https://www.raccaimoveis.com.br"
+          key="canonical"
+        />
+        <link
           rel="preconnect"
           href="https://www.youtube.com"
           crossOrigin="anonymous"

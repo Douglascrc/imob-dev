@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "tsc next-sitemap.config.ts --esModuleInterop --module commonjs && next-sitemap --config next-sitemap.config.js",
     "start": "next start",
     "lint": "next lint --dir",
     "prettier:check": "prettier --check .",
@@ -16,6 +17,7 @@
     "embla-carousel-react": "^8.5.2",
     "lucide-react": "^0.477.0",
     "next": "15.1.7",
+    "next-sitemap": "^4.2.3",
     "prettier": "^3.5.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
