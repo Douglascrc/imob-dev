@@ -56,6 +56,17 @@ export function ImagesCarousel() {
   });
 
   useEffect(() => {
+    if (!emblaApi) return;
+
+    emblaApi.on("select", () => {
+      window.gtag("event", "carousel_interaction", {
+        event_category: "Engajamento",
+        event_label: "Scroll Serviços",
+      });
+    });
+  }, [emblaApi]);
+
+  useEffect(() => {
     if (isModalOpen) {
       document.body.style.overflow = "hidden";
     } else {
